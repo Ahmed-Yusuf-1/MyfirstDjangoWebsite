@@ -1,0 +1,10 @@
+{% extends "practice/layout.html" %}
+
+{% block body %}
+        <h1>This is a test</h1>
+        <!-- The URL refers to the app name "practice" and the HTML file name "index.html". -->
+        <form action="{% url 'practice:index' %}" method="post">
+            {% csrf_token %}
+        {{form}}
+        </form>
+{% endblock %}

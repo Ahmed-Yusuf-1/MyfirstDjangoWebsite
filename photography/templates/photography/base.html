@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Afnan{% endblock %}</title>
+  {% load static%}
+  <link rel="stylesheet" href="{% static 'photography/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#">{% block logo %}Afnan Behubeshi {% endblock %}</a>
+        <img class="cameralogo" src="{% static 'photography/camera.png' %}" alt="Camera">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <div class="dropdown">
+          <li>Services</li>
+          <div class="content">
+            <a href="#">Family</a>
+            <a href="#">Children</a>
+            <a href="#">Newborn</a>
+            <a href="#">Birthday</a>
+            <a href="#">Meternity</a>
+            <a href="#">Wedding</a>
+          </div>
+        </div>
+        <li><a href="#">Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}
+    <!-- Main content will go here -->
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Placeholder Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends "Photography/base.html" %}
+
+{% block title %}Afnan Behubeshi{% endblock %}
+{% load static%}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Capture the moments.</h1>
+    <p>Drawing with light is the art of capturing stories words cannot.</p>
+    <a href="#" class="btn">View Portfolio</a>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery">
+  <h2>Featured Works</h2>
+  <div class="gallery-grid">
+    <!-- Example gallery items. Replace src values with your image URLs -->
+    <div class="gallery-item">
+      <img src="{% static 'photography/ast.jpg'%}" alt="Gallery Image 1">
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'photography/cam.jpg'%}" alt="Gallery Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'photography/jes.jpg'%}" alt="Gallery Image 3">
+    </div>
+    <div class="gallery-item">
+      <img src="{% static 'photography/aziz.jpg'%}" alt="Gallery Image 4">
+    </div>
+  </div>
+</section>
+{% endblock %}
