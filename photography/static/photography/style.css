@@ -126,19 +126,25 @@ body {
 }
 .dropdown .content{
   position: absolute;
-  background-color: rgba(234, 231, 231, 0.647);
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.474);
+  border-radius: 7px;
   min-width: 10px;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.611);
   display: none;
   text-align: center;
+  flex-direction: row;
+  right: 0;
 }
 
 .dropdown .content :hover{
-  background-color: white;
+  background-color: rgb(217, 215, 215);
   
 }
 
 .dropdown:hover .content {
-  display:block;
+  display: flex;
+}
+
+.dropdown{
+  padding: 0rem 1rem;
 }
