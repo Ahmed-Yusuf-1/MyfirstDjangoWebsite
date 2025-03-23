@@ -32,6 +32,7 @@ body {
   
   .nav-links li {
     margin: 0;
+    font-size: 14px;
   }
   
   .nav-links a {
@@ -88,18 +89,37 @@ body {
   }
   
   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display:inline;
     gap: 1rem;
     padding: 0 2rem;
   }
+  .gallery-item p{
+    font-style: italic;
+    font-size: 30px;
+    font-family: "EB Garamond", serif;
+    font-weight:300;
+  }
   
   .gallery-item img {
-    width: 100%;
+    width: 40%;
     height: auto;
     display: block;
-    border-radius: 4px;
+    border-radius: 6px;
   }
+  .gallery-item{
+    display:flex;
+    align-items: center;
+    gap: 8rem;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 15rem;
+    background-color: #ff1d8e07;
+    margin: 100px;
+    border-radius: 25px;
+    
+  }
+
+
   
   /* Footer */
   footer {
