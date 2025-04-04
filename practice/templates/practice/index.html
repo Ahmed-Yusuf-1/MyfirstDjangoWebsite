@@ -1,0 +1,13 @@
+{% extends "practice/layout.html"%}
+{%block body%}
+    <h1>Hello, World!</h1>
+    <ul>
+    {% for list in practice%}
+        <li>{{list}}</li>
+    {% empty %}
+        <li>no task</li>
+    {% endfor%}
+    </ul>
+
+    <a href="{% url 'practice:add' %}">View tasks</a>
+{%endblock%}
