@@ -18,8 +18,21 @@
   <div class="gallery-grid">
     <!-- Example gallery items. Replace src values with your image URLs -->
     <div class="gallery-item">
-      <img src="{% static 'photography/5.jpeg'%}" alt="Gallery Image 1">
-      <p>This photograph captures a quiet moment,<br> beautifully highlighting her eye for emotion and detail. <br>Elevate your space with her inspiring imagery.</p>
+      <div class="slides">
+        <div class='slide'>
+          <img src="{% static 'photography/5.jpeg'%}" alt="Gallery Image 1">
+          <p>This photograph captures a quiet moment</p>
+        </div>
+        <div class='slide'>
+          <img src="{% static 'photography/3.jpg'%}" alt="Gallery Image 1">
+          <p>beautifully highlighting her eye for emotion and detail.</p>
+        </div>
+        <div class='slide'>
+          <img src="{% static 'photography/4.jpeg'%}" alt="Gallery Image 1">
+          <p>Elevate your space with her inspiring imagery.</p>
+        </div>
+        <button class="prev" id="prevBtn">&#10094;</button> <button class="next" id="nextBtn">&#10095;</button> </div>
+      </div>
     </div>
     <div class="gallery-item">
       <p>Discover her exceptional photography,<br> where simplicity meets elegance.<br> Each photo invites viewers into a unique visual story.</p>
@@ -37,4 +50,5 @@
     </div>
   </div>
 </section>
+<script src="{% static 'photography/script.js' %}"></script> 
 {% endblock %}
