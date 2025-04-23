@@ -1,0 +1,57 @@
+{% extends "photography/base.html" %}
+{% load static %}
+
+{%block title%}
+Portfolio
+{% endblock %}
+
+{% block content%}
+<section class="portfolio-section">
+    <h2 class="portfolio-title">My Work</h2>
+    <div class="portfolio-grid">
+        <!-- Example Portfolio Item 1 -->
+        <div class="portfolio-item">
+            <img src="{% static 'photography/1.jpg' %}" alt="Portfolio Image 1">
+            <div class="portfolio-overlay">
+                <p>Project Title 1</p>
+            </div>
+        </div>
+        <!-- Example Portfolio Item 2 -->
+        <div class="portfolio-item">
+            <img src="{% static 'photography/2.jpg' %}" alt="Portfolio Image 2">
+            <div class="portfolio-overlay">
+                <p>Project Title 2</p>
+            </div>
+        </div>
+        <!-- Example Portfolio Item 3 -->
+        <div class="portfolio-item tall">
+            <img src="{% static 'photography/5.jpeg' %}" alt="Portfolio Image 3">
+            <div class="portfolio-overlay">
+                <p>Project Title 3</p>
+            </div>
+        </div>
+        <!-- Example Portfolio Item 4 -->
+        <div class="portfolio-item">
+            <img src="{% static 'photography/4.jpeg' %}" alt="Portfolio Image 4">
+            <div class="portfolio-overlay">
+                <p>Project Title 4</p>
+            </div>
+        </div>
+         <!-- Example Portfolio Item 5 -->
+         <div class="portfolio-item wide">
+            <img src="{% static 'photography/3.jpg' %}" alt="Portfolio Image 5">
+            <div class="portfolio-overlay">
+                <p>Project Title 5</p>
+            </div>
+        </div>
+         <!-- Example Portfolio Item 6 -->
+         <div class="portfolio-item">
+            <img src="{% static 'photography/13.jpg' %}" alt="Portfolio Image 6">
+            <div class="portfolio-overlay">
+                <p>Project Title 6</p>
+            </div>
+        </div>
+        <!-- Add more portfolio items as needed -->
+    </div>
+</section>
+{% endblock %}

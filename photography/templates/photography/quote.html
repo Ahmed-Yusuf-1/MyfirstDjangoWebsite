@@ -1,0 +1,64 @@
+{% extends "photography/base.html" %}
+{% load static %} {# Add this line to load static files #}
+
+{% block title%}
+Quote
+{% endblock %}
+
+{%block content%} {# Changed from body to content #}
+<div class="quote-calculator-container">
+    <div class="quote-calculator">
+        <h2>Get Your Instant Quote</h2>
+        <p>Fill in the details below to estimate the cost for your photography session.</p>
+        <form action="#" method="post"> {# Action and method are placeholders #}
+            {% csrf_token %} {# Important for Django forms #}
+
+            <div class="form-group">
+                <label for="service-type">Type of Photography:</label>
+                <select id="service-type" name="service_type">
+                    <option value="wedding">Family</option>
+                    <option value="portrait">Children</option>
+                    <option value="event">Newborn</option>
+                    <option value="commercial">Birthday</option>
+                    <option value="other">Meternity</option>
+                    <option value="other">Wedding</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Estimated Duration (hours):</label>
+                <input type="number" id="duration" name="duration" min="1" placeholder="e.g., 4">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="e.g., City Park, Studio">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="So we can send you the quote">
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes (optional):</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Any specific requests or details..."></textarea>
+            </div>
+
+            <button type="submit" class="btn quote-btn">Calculate My Quote</button>
+
+            <div class="quote-result" style="display: none;"> {# Placeholder for result #}
+                <h3>Estimated Quote:</h3>
+                <p id="estimated-price">$XXX.XX</p>
+                <small>This is an estimate. We'll contact you with a detailed quote.</small>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}
+

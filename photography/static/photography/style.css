@@ -102,7 +102,7 @@ body {
   }
   
   .gallery-item img {
-    width: 40%;
+    width: 35%;
     height: auto;
     display: block;
     border-radius: 6px;
@@ -114,7 +114,7 @@ body {
     text-align: center;
     justify-content: center;
     margin-bottom: 15rem;
-    background-color: #ff1d8e07;
+    background-color: #F0F0F0;
     margin: 100px;
     border-radius: 25px;
     
@@ -124,11 +124,79 @@ body {
   
   /* Footer */
   footer {
-    background-color: #fff;
+    background-color: #fff; /* White background for footer */
+    color: #333; /* Darker text for readability */
+    padding: 3rem 2rem 1rem; /* More padding top, less bottom */
+    margin-top: 4rem; /* More space above the footer */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    font-size: 0.9rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: space-between; /* Distribute columns */
+    gap: 2rem; /* Space between columns */
+    margin-bottom: 2rem; /* Space before the bottom text */
+    padding: 0 5%; /* Add horizontal padding */
+  }
+  
+  .footer-column {
+    flex: 1; /* Allow columns to grow */
+    min-width: 180px; /* Minimum width before wrapping */
+    margin-bottom: 1.5rem; /* Space below columns on wrap */
+  }
+  
+  .footer-column h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #000; /* Black heading */
+    font-weight: bold;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+    padding-bottom: 0.5rem;
+  }
+  
+  .footer-column p,
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column a {
+    color: #555; /* Slightly lighter link color */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column a:hover {
+    color: #000; /* Black on hover */
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin-right: 0.8rem;
+    font-size: 1.4rem; /* Larger icons */
+    color: #555;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #000;
+    transform: scale(1.1); /* Slight scale effect on hover */
+  }
+  
+  .footer-bottom {
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    margin-top: 2rem; /* Space above bottom text */
+    padding-top: 1rem; /* Space below the line */
+    border-top: 1px solid #eee; /* Separator line */
+    font-size: 0.8rem;
+    color: #777; /* Lighter text for copyright */
   }
 
 .logo{
@@ -171,29 +239,28 @@ body {
 }
 
 .slides {
-  position: relative; /* Needed for absolute positioning of slides */
-  width: 100%; /* Container takes full width of its parent */
-  min-height: 600px; /* Example minimum height */
-  overflow: hidden; /* Hide slides outside the container */
+  position: relative; 
+  width: 100%;
+  min-height: 600px; 
+  overflow: hidden; 
 }
 
 .slide{
-  position: absolute; /* Position slides on top of each other */
-  top: 0;
-  left: 0;
-  width: 100%; /* Make slide take full container width */
-  height: 100%; /* Make slide take full container height */
-  opacity: 0; /* Hide slides by default */
-  transition: opacity 0.5s ease-in-out; /* Fade transition */
-  display: flex; /* Keep flex for internal alignment if needed */
-  align-items: center; /* Example alignment */
-  justify-content: center; /* Example alignment */
-  background-color: #fff; /* Add background if needed */
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 1%;
+  transition: opacity 0.3s ease-in-out;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  background-color: #b2a5b620; 
+  border-radius: 5px;
 }
 
-.slide.active { /* Style for the currently visible slide */
+.slide.active { 
   opacity: 1;
-  z-index: 1; /* Ensure active slide is on top */
+  z-index: 1; 
 }
 
 .slide p{
@@ -202,9 +269,8 @@ body {
 }
 
 .slide img { /* Ensure images fit well */
-    max-width: 50%; /* Adjust as needed */
+    max-width: 100%; /* Adjust as needed */
     height: auto;
-    margin-right: 1rem; /* Space between image and text */
 }
 
 .next, .prev{
@@ -214,10 +280,10 @@ body {
     transform: translateY(-50%); /* Centers buttons vertically */
     width: auto;
     padding: 16px;
-    color: white;
+    color: rgba(0, 0, 0, 0.638);
     font-weight: bold;
     font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: #b2a5b611; /* Semi-transparent background */
     border: none;
     user-select: none; /* Prevents text selection on click */
     transition: background-color 0.3s ease;
@@ -235,10 +301,247 @@ body {
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  background-color: rgba(143, 143, 143, 0.541); /* Darker background on hover */
 }
 
 .prev:disabled, .next:disabled {
   background-color: rgba(0, 0, 0, 0.2);
   cursor: default;
+}
+
+/* Quote Calculator Styles */
+.quote-calculator-container {
+    padding: 4rem 2rem; /* Add padding around the calculator */
+    background-color: #e9e9e9; /* Slightly different background for the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-calculator {
+    background-color: #fff; /* White background for the box */
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-width: 600px; /* Limit width */
+    width: 100%;
+    text-align: left; /* Align text to the left within the box */
+}
+
+.quote-calculator h2 {
+    text-align: center;
+    font-family: "Dancing Script", cursive; /* Use a distinct font */
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.quote-calculator p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Space between form groups */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8a798e; /* Highlight color on focus */
+    box-shadow: 0 0 5px rgba(138, 121, 142, 0.3);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 80px;
+}
+
+.quote-btn {
+    display: block; /* Make button take full width */
+    width: 100%;
+    padding: 1rem;
+    background-color: #5a4d5e; /* Primary button color */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    text-decoration: none; /* Remove default button underline */
+    margin-top: 2rem; /* Add space above the button */
+}
+
+.quote-btn:hover {
+    background-color: #453a49; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+.quote-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.quote-result h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.quote-result #estimated-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #5a4d5e; /* Match button color */
+    margin-bottom: 0.5rem;
+}
+
+.quote-result small {
+    color: #777;
+    font-style: italic;
+}
+
+/* Portfolio Section Styles */
+.portfolio-section {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8; /* Slightly different background */
+    text-align: center;
+}
+
+.portfolio-title {
+    font-family: "Dancing Script", cursive;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block; /* Allows centering and pseudo-element positioning */
+}
+
+/* Optional: Add a decorative underline */
+.portfolio-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background-color: #8a798e; /* Accent color */
+    margin: 0.5rem auto 0; /* Center the line */
+    border-radius: 2px;
+}
+
+.portfolio-grid {
+    display: grid;
+    /* Adjust columns for responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; /* Space between grid items */
+    max-width: 1200px; /* Limit overall width */
+    margin: 0 auto; /* Center the grid */
+}
+
+.portfolio-item {
+    position: relative; /* Needed for overlay positioning */
+    overflow: hidden; /* Hide parts of image/overlay that overflow */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indicate interactivity */
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, cropping if needed */
+    transition: transform 0.4s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.7); /* Dark semi-transparent overlay */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.portfolio-overlay p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: translateY(10px); /* Start slightly lower */
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Show overlay */
+}
+
+.portfolio-item:hover .portfolio-overlay p {
+    transform: translateY(0); /* Move text into position */
+}
+
+/* Optional: Spanning items for varied layout */
+.portfolio-item.wide {
+    grid-column: span 2; /* Make item span 2 columns */
+}
+
+.portfolio-item.tall {
+    grid-row: span 2; /* Make item span 2 rows */
+}
+
+/* Responsive adjustments for grid spanning */
+@media (max-width: 768px) {
+    .portfolio-item.wide {
+        grid-column: span 1; /* Reset span on smaller screens */
+    }
+    .portfolio-item.tall {
+        grid-row: span 1; /* Reset span on smaller screens */
+    }
 }

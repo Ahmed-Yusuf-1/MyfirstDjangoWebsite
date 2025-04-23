@@ -12,8 +12,10 @@
   <header>
     <nav>
       <div class="logo">
-        <a href="#">{% block logo %}Afnan Behubeshi {% endblock %}</a>
-        <img class="cameralogo" src="{% static 'photography/camera.png' %}" alt="Camera">
+        <a href="{% url 'photography:home'%}">{% block logo %}Afnan Behubeshi
+          <img class="cameralogo" src="{% static 'photography/camera.png' %}" alt="Camera">
+          {% endblock %}</a>
+        
       </div>
       <ul class="nav-links">
         <div class="dropdown">
@@ -27,8 +29,8 @@
             <a href="#">Wedding</a>
           </div>
         </div>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Quote</a></li>
+        <li><a href="{% url 'photography:portfolio' %}">Portfolio</a></li>
+        <li><a href="{% url 'photography:quote' %}">Quote</a></li>
       </ul>
     </nav>
   </header>
@@ -43,7 +45,48 @@
   <footer>
     {%block end%}
     {%endblock%}
-    <p>&copy; 2025 Afnan Behubeshi. All rights reserved.</p>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Contact Me</h4>
+          <p>Email: Naney.ali2000gmail.com</p>
+          <p>Phone: 403 813 1270</p>
+          <p>Address: 123 Photography St, Art City</p>
+        </div>
+        <div class="footer-column">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Order History</a></li>
+            <li><a href="#">Wishlist</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Follow Me</h4>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/afnan.bahubeshi.7/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/afnan_bahubeshi/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.pinterest.com/afnanbahi/" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {% now "Y" %} Afnan Behubeshi Photography. All Rights Reserved.</p>
+      </div>
+    </footer>
+      <!-- Add Font Awesome for social icons - place this in your base.html head ideally -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
   </footer>
 </body>
 </html>

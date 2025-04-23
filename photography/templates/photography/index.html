@@ -8,7 +8,7 @@
   <div class="hero-content">
     <h1>Capture the moments.</h1>
     <p>Drawing with light is the art of capturing stories words cannot.</p>
-    <a href="#" class="btn">View Portfolio</a>
+    <a href="{% url 'photography:portfolio' %}" class="btn">View Portfolio</a>
   </div>
 </section>
 
@@ -16,20 +16,23 @@
 <section class="gallery">
   <h2>Featured Works</h2>
   <div class="gallery-grid">
-    <!-- Example gallery items. Replace src values with your image URLs -->
     <div class="gallery-item">
       <div class="slides">
         <div class='slide'>
-          <img src="{% static 'photography/5.jpeg'%}" alt="Gallery Image 1">
-          <p>This photograph captures a quiet moment</p>
+          <img src="{% static 'photography/6.jpg'%}" alt="Gallery Image 1">
+          <p>Are you a camera? Because every time I look at you, I smile</p>
         </div>
         <div class='slide'>
-          <img src="{% static 'photography/3.jpg'%}" alt="Gallery Image 1">
-          <p>beautifully highlighting her eye for emotion and detail.</p>
+          <img src="{% static 'photography/7.jpg'%}" alt="Gallery Image 1">
+          <p>I think my autofocus is broken, because I can't take my eyes off you.</p>
         </div>
         <div class='slide'>
-          <img src="{% static 'photography/4.jpeg'%}" alt="Gallery Image 1">
-          <p>Elevate your space with her inspiring imagery.</p>
+          <img src="{% static 'photography/8.jpg'%}" alt="Gallery Image 1">
+          <p>Are we in a darkroom? Because I think something is developing between us.</p>
+        </div>
+        <div class='slide'>
+          <img src="{% static 'photography/12.png'%}" alt="Gallery Image 1">
+          <p>You must be a high ISO, because you're making my heart race even in low light.</p>
         </div>
         <button class="prev" id="prevBtn">&#10094;</button> <button class="next" id="nextBtn">&#10095;</button> </div>
       </div>
@@ -37,18 +40,11 @@
     <div class="gallery-item">
       <p>Discover her exceptional photography,<br> where simplicity meets elegance.<br> Each photo invites viewers into a unique visual story.</p>
       <img src="{% static 'photography/3.jpg'%}" alt="Gallery Image 2">
-      
-    </div>
-    <div class="gallery-item">
-      <img src="{% static 'photography/2.jpg'%}" alt="Gallery Image 3">
-      <p>Experience artful storytelling through her lens.<br> Her work transforms everyday moments into<br> captivating scenes you'll cherish<br>اختبر فنّ سرد القصص من خلال عدستها.  
-        تُحوّل أعمالها اللحظات اليومية إلى مشاهد آسرة ستعتز بها..</p>
-    </div>
-    <div class="gallery-item">
-      <p>Illuminate your space with her beautifully<br> composed photographs—each one reflecting her<br> passion for capturing life's subtle beauty.</p>
-      <img src="{% static 'photography/4.jpeg'%}" alt="Gallery Image 4">
     </div>
   </div>
 </section>
 <script src="{% static 'photography/script.js' %}"></script> 
+
+<!-- Footer Section -->
+
 {% endblock %}
