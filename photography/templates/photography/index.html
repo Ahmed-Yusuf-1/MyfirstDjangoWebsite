@@ -3,7 +3,6 @@
 {% block title %}Afnan Behubeshi{% endblock %}
 {% load static%}
 {% block content %}
-<!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
     <h1>Capture the moments.</h1>
@@ -12,55 +11,56 @@
   </div>
 </section>
 
-<!-- Gallery Section -->
 <section class="gallery">
   <h2>Featured Works</h2>
   <div class="gallery-grid">
     <div class="gallery-item">
-      <div class="slides">
+      <div class="slides" id="slideshow1">
         <div class='slide'>
           <img src="{% static 'photography/6.jpg'%}" alt="Gallery Image 1">
           <p>Are you a camera? Because every time I look at you, I smile</p>
         </div>
         <div class='slide'>
-          <img src="{% static 'photography/7.jpg'%}" alt="Gallery Image 1">
           <p>I think my autofocus is broken, because I can't take my eyes off you.</p>
+          <img src="{% static 'photography/7.jpg'%}" alt="Gallery Image 2">
         </div>
         <div class='slide'>
-          <img src="{% static 'photography/8.jpg'%}" alt="Gallery Image 1">
+          <img src="{% static 'photography/8.jpg'%}" alt="Gallery Image 3">
           <p>Are we in a darkroom? Because I think something is developing between us.</p>
         </div>
         <div class='slide'>
-          <img src="{% static 'photography/12.png'%}" alt="Gallery Image 1">
           <p>You must be a high ISO, because you're making my heart race even in low light.</p>
+          <img src="{% static 'photography/12.png'%}" alt="Gallery Image 4">
         </div>
-        <button class="prev" id="prevBtn">&#10094;</button> <button class="next" id="nextBtn">&#10095;</button> </div>
+        <button class="prev" id="prevBtn1">&#10094;</button>
+        <button class="next" id="nextBtn1">&#10095;</button>
       </div>
     </div>
-    {% comment %} <div class="gallery-item">
-      <div class="slides">
-        <div class='slide'>
-            <img src="{% static 'photography/3.jpg'%}" alt="Gallery Image 2">
-            <p>Discover her exceptional photography, where simplicity meets elegance.</p>
-        </div>
-        <div class='slide'>
-            <img src="{% static 'photography/4.jpeg'%}" alt="Gallery Image 4">
-            <p>Each photo invites viewers into a unique visual story.</p>
-        </div>
-        <div class='slide'>
-            <img src="{% static 'photography/5.jpeg'%}" alt="Gallery Image 5">
-            <p>Another captivating moment captured.</p>
-        </div>
 
-        <button class="prev" id="prevBtn2">&#10094;</button>
+    <div class="gallery-item">
+       <div class="slides" id="slideshow2">
+        <div class='slide'>
+          <p>I think I need to adjust my white balance, because you just brightened up my world.</p>
+          <img src="{% static 'photography/9.jpg'%}" alt="Gallery Image 5">
+        </div>
+        <div class='slide'>
+            <img src="{% static 'photography/10.jpg'%}" alt="Gallery Image 6">
+            <p>Are you a prime lens? Because you seem to have all the right qualities.</p>
+        </div>
+        <div class='slide'>
+            <p>When I look at you it's like I have a blur filter on, because I can't see anything except you.</p>
+            <img src="{% static 'photography/11.jpg'%}" alt="Gallery Image 7">
+        </div>
+        <div class='slide'>
+          <img src="{% static 'photography/4.jpeg'%}" alt="Gallery Image 7">
+          <p>I wish I had a lens filter for how stunning you are, but I don't think they make one strong enough.</p>
+      </div>
+         <button class="prev" id="prevBtn2">&#10094;</button>
         <button class="next" id="nextBtn2">&#10095;</button>
     </div>
-     <p>Some descriptive text about this gallery item.</p>
-    </div> {% endcomment %}
+    </div>
   </div>
 </section>
-<script src="{% static 'photography/script.js' %}"></script> 
-
-<!-- Footer Section -->
+<script src="{% static 'photography/script.js' %}"></script>
 
 {% endblock %}

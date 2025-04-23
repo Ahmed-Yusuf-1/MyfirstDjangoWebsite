@@ -1,64 +1,67 @@
 // Wait for the HTML document to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
 
-    const slidesContainer = document.querySelector('.slides');
-    // NodeListOf<Element> is like an array, but not exactly. Convert it for easier use.
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    const prevButton = document.getElementById('prevBtn');
-    const nextButton = document.getElementById('nextBtn');
+    // Function to initialize a slideshow
+    function initializeSlideshow(containerId, prevBtnId, nextBtnId) {
+        const slidesContainer = document.getElementById(containerId);
+        // Select elements *within* the specific container
+        if (!slidesContainer) {
+            console.error(`Slideshow container with ID "${containerId}" not found!`);
+            return; // Stop if container is missing
+        }
+        // NodeListOf<Element> is like an array, but not exactly. Convert it for easier use.
+        const slides = Array.from(slidesContainer.querySelectorAll('.slide'));
+        const prevButton = document.getElementById(prevBtnId);
+        const nextButton = document.getElementById(nextBtnId);
 
-    // Check if essential elements exist
-    if (!slidesContainer || !prevButton || !nextButton || slides.length === 0) {
-        console.error("Slideshow elements not found!");
-        return; // Stop if elements are missing
-    }
+        // Check if essential elements exist within this specific slideshow
+        if (!prevButton || !nextButton || slides.length === 0) {
+            console.error(`Slideshow elements (slides/buttons) not found for container #${containerId}!`);
+            return; // Stop if elements are missing
+        }
 
-    let currentIndex = 0; // Keep track of the current slide index (0-based)
-    const totalSlides = slides.length;
+        let currentIndex = 0; // Keep track of the current slide index (0-based) for *this* slideshow
+        const totalSlides = slides.length;
 
-    // Function to move to a specific slide
-    function goToSlide(index) {
-        // Remove 'active' class from all slides
-        slides.forEach(slide => slide.classList.remove('active'));
+        // Function to move to a specific slide within *this* slideshow
+        function goToSlide(index) {
+            // Ensure index loops correctly
+            if (index < 0) {
+                index = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                index = 0;
+            }
 
-        // Add 'active' class to the target slide
-        slides[index].classList.add('active');
+            // Remove 'active' class from all slides *within this slideshow*
+            slides.forEach(slide => slide.classList.remove('active'));
 
-        // Update the current index tracker
-        currentIndex = index;
+            // Add 'active' class to the target slide *within this slideshow*
+            slides[index].classList.add('active');
 
-        // Button states are handled by the looping logic now
-        // prevButton.disabled = index === 0; // Removed for looping
-        // nextButton.disabled = index === totalSlides - 1; // Removed for looping
-    }
+            // Update the current index tracker for *this* slideshow
+            currentIndex = index;
+        }
 
-    // Event Listener for the Next Button
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < totalSlides - 1) { // Only proceed if not the last slide
+        // Event Listener for the Next Button for *this* slideshow
+        nextButton.addEventListener('click', () => {
             goToSlide(currentIndex + 1);
-        }
-        // Optional: Add looping - uncomment below
-        else {
-            goToSlide(0); // Go back to the first slide
-        }
-    });
+        });
 
-    // Event Listener for the Previous Button
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) { // Only proceed if not the first slide
+        // Event Listener for the Previous Button for *this* slideshow
+        prevButton.addEventListener('click', () => {
             goToSlide(currentIndex - 1);
-        }
-        // Optional: Add looping - uncomment below
-        else {
-            goToSlide(totalSlides - 1); // Go to the last slide
-        }
-    });
+        });
 
-    // Initialize the slideshow
-    if (slides.length > 0) {
-        slides[0].classList.add('active'); // Make the first slide visible initially
-        goToSlide(currentIndex); // Set initial button states
+        // Initialize *this* slideshow
+        if (slides.length > 0) {
+            goToSlide(0); // Start at the first slide
+        }
     }
 
+    // Initialize the first slideshow
+    initializeSlideshow('slideshow1', 'prevBtn1', 'nextBtn1');
+
+    // Initialize the second slideshow
+    initializeSlideshow('slideshow2', 'prevBtn2', 'nextBtn2');
 
 }); // End of DOMContentLoaded listener
