@@ -37,10 +37,26 @@
         <button class="prev" id="prevBtn">&#10094;</button> <button class="next" id="nextBtn">&#10095;</button> </div>
       </div>
     </div>
-    <div class="gallery-item">
-      <p>Discover her exceptional photography,<br> where simplicity meets elegance.<br> Each photo invites viewers into a unique visual story.</p>
-      <img src="{% static 'photography/3.jpg'%}" alt="Gallery Image 2">
+    {% comment %} <div class="gallery-item">
+      <div class="slides">
+        <div class='slide'>
+            <img src="{% static 'photography/3.jpg'%}" alt="Gallery Image 2">
+            <p>Discover her exceptional photography, where simplicity meets elegance.</p>
+        </div>
+        <div class='slide'>
+            <img src="{% static 'photography/4.jpeg'%}" alt="Gallery Image 4">
+            <p>Each photo invites viewers into a unique visual story.</p>
+        </div>
+        <div class='slide'>
+            <img src="{% static 'photography/5.jpeg'%}" alt="Gallery Image 5">
+            <p>Another captivating moment captured.</p>
+        </div>
+
+        <button class="prev" id="prevBtn2">&#10094;</button>
+        <button class="next" id="nextBtn2">&#10095;</button>
     </div>
+     <p>Some descriptive text about this gallery item.</p>
+    </div> {% endcomment %}
   </div>
 </section>
 <script src="{% static 'photography/script.js' %}"></script> 
